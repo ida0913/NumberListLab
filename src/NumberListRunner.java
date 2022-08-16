@@ -12,47 +12,55 @@ public class NumberListRunner {
 
         // test constructor
         NumberList list = new NumberList();
+
         // test isEmpty()
         System.out.println(list.isEmpty());
 
         // test cases that will go out of bounds
-        // try {
-        // list.add(-1, 5); // add element 5 at index -1
-        // } catch (IndexOutOfBoundsException e) {
-        // System.out.println("Your out of bounds exception works");
-        // }
+        try {
+            list.add(-1, 5); // add element 5 at index -1
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Your out of bounds exception works");
+        }
 
         // test the add() method and toString() method
         list.add(2);
         list.add(4);
         list.add(6);
         list.add(8);
-        list.add(7);
         System.out.println(list);
 
-
-
-        //test the get() method
+        // test the get() method
         System.out.println(list.get(0));
         System.out.println(list.get(list.getSize() - 1));
 
-        // //test the set() method
-        // list.set(0, 20);
-        // list.set(2, 40);
-        // System.out.println(list); //test the remove() method list.remove(list.size()
-        // - 2);System.out.println(list);
+        // test the set() method
+        list.set(0, 20);
+        list.set(2, 40);
+        System.out.println(list);
 
-        // //test misc.
-        // list.remove(0); list.remove(0); list.remove(0);
-        // System.out.println(list);
-        // System.out.println(list.size());
-        // System.out.println(list.isEmpty());
+        // test the remove() method
+        list.remove(list.getSize() - 2);
+        System.out.println(list);
 
-        // //test two parameter add() method, list should begin empty
-        // list.add(0, 23); list.add(1, 17); list.add(2, 44);
-        // System.out.println(list);
+        // test misc.
+        list.remove(0);
+        list.remove(0);
+        list.remove(0);
+        System.out.println(list);
+        System.out.println(list.getSize());
+        System.out.println(list.isEmpty());
 
-        // list.add(0, 72); list.add(2, 65);
-        // System.out.println(list);
+        // test two parameter add() method, list should begin empty
+        list.add(0, 23);
+        list.add(1, 17);
+        list.add(2, 44);
+        System.out.println(list);
+
+        list.add(0, 72);
+
+        // System.out.println(Arrays.toString(list.getList()));
+        list.add(2, 65);
+        System.out.println(list);
     }
 }

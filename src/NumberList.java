@@ -65,8 +65,7 @@ public class NumberList {
             throw new IndexOutOfBoundsException();
         if (size == list.length)
             doubleCapacity();
-
-        for (int i = size - 1; i > index; i--) {
+        for (int i = size - 1; i >= index; i--) {
             list[i + 1] = list[i];
         }
         list[index] = val;
@@ -83,7 +82,27 @@ public class NumberList {
     public Integer get(int index) {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException();
-        
+
         return list[index];
     }
+
+    public Integer set(int index, Integer val) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException();
+        return list[index] = val;
+    }
+
+    public Integer remove(int index) {
+        int returnState = list[index];
+
+        list[index] = null;
+
+        for (int i = index; i < size - 1; i++) {
+            list[i] = list[i + 1];
+        }
+        list[size - 1] = null;
+        size = getSize();
+        return returnState;
+    }
+
 }

@@ -9,6 +9,7 @@ public class NumberList {
     public NumberList() {
 
         list = new Integer[2];
+        size = this.getSize();
     }
 
     public int getSize() {
@@ -48,6 +49,26 @@ public class NumberList {
         }
         
         list = newList;
+        size = this.getSize();
+    }
 
+    public void add(int index, Integer val){
+
+        if(index < 0 && index>size) throw new IndexOutOfBoundsException();
+
+        if(size == list.length) doubleCapacity();
+
+        for(int i = size-1; i>index; i++){
+            list[i+1] = list[i];
+        }
+        list[index] = val;
+        
+        size = this.getSize();
+
+    }
+
+    public boolean add(Integer val){
+        add(size, val);
+        return true;
     }
 }

@@ -24,6 +24,8 @@ public class NumberList {
 
     }
 
+    public Integer[] getList(){return list;}
+
     public boolean isEmpty() {
         return this.getSize() == 0;
     }
@@ -55,12 +57,12 @@ public class NumberList {
     }
 
     public void add(int index, Integer val){
-
+        
         if(index < 0 && index>size) throw new IndexOutOfBoundsException();
 
         if(size == list.length) doubleCapacity();
 
-        for(int i = size-1; i>index; i++){
+        for(int i = size-1; i>index; i--){
             list[i+1] = list[i];
         }
         list[index] = val;

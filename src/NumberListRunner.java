@@ -15,15 +15,17 @@ public class NumberListRunner {
 
         // test cases that will go out of bounds
         // try {
-        // list.add(-1, 5); //add element 5 at index -1
-        // }
-        // catch (IndexOutOfBoundsException e) {
-        // System.out.println("Your out of bounds exception works");
+        //     list.add(-1, 5); // add element 5 at index -1
+        // } catch (IndexOutOfBoundsException e) {
+        //     System.out.println("Your out of bounds exception works");
         // }
 
-        // //test the add() method and toString() method
-        // list.add(2); list.add(4); list.add(6); list.add(8);
-        // System.out.println(list);
+        // test the add() method and toString() method
+        list.add(2);
+        list.add(4);
+        list.add(6);
+        list.add(8);
+        System.out.println(list);
 
         // //test the get() method
         // System.out.println(list.get(0));

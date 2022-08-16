@@ -1,8 +1,8 @@
+import java.util.ArrayList;
 public class NumberList {
 
     // the "backing" array that will store the list's Integer objects
     private Integer[] list;
-
     // a NumberList also needs to remember the list's size
     private int size;
 
@@ -37,5 +37,17 @@ public class NumberList {
             }
         }
         return string;
+    }
+
+    private void doubleCapacity(){
+
+        Integer[] newList = new Integer[2*list.length];
+
+        for(int i = 0; i<this.getSize(); i++){
+            newList[i] = list[i];
+        }
+        
+        list = newList;
+
     }
 }

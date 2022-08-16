@@ -28,11 +28,13 @@ public class NumberListRunner {
         list.add(6);
         list.add(8);
         list.add(7);
-        list.add(2, 14);
         System.out.println(list);
-        // //test the get() method
-        // System.out.println(list.get(0));
-        // System.out.println(list.get(list.size() - 1));
+
+
+
+        //test the get() method
+        System.out.println(list.get(0));
+        System.out.println(list.get(list.getSize() - 1));
 
         // //test the set() method
         // list.set(0, 20);

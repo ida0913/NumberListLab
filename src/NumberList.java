@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+
 public class NumberList {
 
     // the "backing" array that will store the list's Integer objects
@@ -24,7 +25,9 @@ public class NumberList {
 
     }
 
-    public Integer[] getList(){return list;}
+    public Integer[] getList() {
+        return list;
+    }
 
     public boolean isEmpty() {
         return this.getSize() == 0;
@@ -44,35 +47,43 @@ public class NumberList {
         return string + "]";
     }
 
-    private void doubleCapacity(){
+    private void doubleCapacity() {
 
-        Integer[] newList = new Integer[2*list.length];
+        Integer[] newList = new Integer[2 * list.length];
 
-        for(int i = 0; i<this.getSize(); i++){
+        for (int i = 0; i < this.getSize(); i++) {
             newList[i] = list[i];
         }
-        
+
         list = newList;
         size = this.getSize();
     }
 
-    public void add(int index, Integer val){
-        
-        if(index < 0 && index>size) throw new IndexOutOfBoundsException();
+    public void add(int index, Integer val) {
 
-        if(size == list.length) doubleCapacity();
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException();
+        if (size == list.length)
+            doubleCapacity();
 
-        for(int i = size-1; i>index; i--){
-            list[i+1] = list[i];
+        for (int i = size - 1; i > index; i--) {
+            list[i + 1] = list[i];
         }
         list[index] = val;
-        
+
         size = this.getSize();
 
     }
 
-    public boolean add(Integer val){
+    public boolean add(Integer val) {
         this.add(size, val);
         return true;
+    }
+
+    public Integer get(int index) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException();
+        
+        return list[index];
     }
 }
